@@ -6,7 +6,7 @@ FROM alpine:latest as helper
 WORKDIR /mtasa-rootfs
 
 RUN apk add --no-cache --update wget tar
-RUN wget https://nightly.mtasa.com/multitheftauto_linux_x64-${MTA_SERVER_VERSION}-rc-${MTA_SERVER_BUILD_NUMBER}.tar.gz -O /tmp/mtasa.tar.gz \
+RUN wget https://nightly.mtasa.com/multitheftauto_linux_x64-1.5.8-rc-20870.tar.gz -O /tmp/mtasa.tar.gz \
     && wget https://linux.mtasa.com/dl/baseconfig.tar.gz -P /tmp \
     && wget http://nightly.mtasa.com/files/modules/64/libmysqlclient.so.16 -P ./usr/lib \
     && mkdir lib && cp ./usr/lib/libmysqlclient.so.16 ./lib \
