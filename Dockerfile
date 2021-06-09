@@ -3,9 +3,6 @@ ARG MTA_SERVER_BUILD_NUMBER=20870
 
 FROM alpine:latest as helper
 
-ARG MTA_SERVER_VERSION
-ARG MTA_SERVER_BUILD_NUMBER
-
 WORKDIR /mtasa-rootfs
 
 RUN apk add --no-cache --update wget tar
@@ -28,8 +25,6 @@ RUN wget https://nightly.mtasa.com/multitheftauto_linux_x64-${MTA_SERVER_VERSION
 
 FROM debian:bullseye-slim
 
-ARG MTA_SERVER_VERSION
-ARG MTA_SERVER_BUILD_NUMBER
 
 ENV MTA_SERVER_VERSION=${MTA_SERVER_VERSION} \
     MTA_SERVER_BUILD_NUMBER=${MTA_SERVER_BUILD_NUMBER} \
